@@ -1,1 +1,92 @@
-h1 { font-size: 12px; color:orange;}
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Roboto', arial, sans-serif;
+    box-sizing: border-box;
+}
+img {
+    display: block;
+    width: 100%;
+}
+
+/* Scrollbar brand styling */
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background: black;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+/* Selection brand styling */
+::selection {
+    color: #000;
+    background: #fbb730;
+}
+::-moz-selection {
+    color: #000;
+    background: #fbb730;
+}
+
+/* Header styling */
+.headerContainer {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/header.jpg");
+    background-position: center top;
+    background-size: cover;
+}
+.headerContainer:after {
+    content: "";
+    position: absolute;
+    top: calc(100vh - 60px);
+    left: calc(50vw - 195px);
+    border-bottom: 60px solid black;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    z-index: 999;
+    text-align: center;
+    }
+.headerTitle {
+    font-weight: 400;
+    font-size: 8em;
+    color: #fff;
+    padding: 3em 0 0 1em;
+    text-transform: uppercase;
+}
+
+/* About styling */
+.aboutContainer {
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/abraham-fox.jpg");
+    background-position: center top;
+    background-size: cover;
+}
+.aboutContainer:after {
+    content: "";
+    position: absolute;
+    top: calc(100vh - 60px);
+    left: calc(50vw - 195px);
+    border-bottom: 60px solid white;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    z-index: 999;
+    text-align: center;
+    }
+.aboutTitle {
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -1em;
+    top: 50%;
+}
