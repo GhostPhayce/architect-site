@@ -1,9 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     font-family: 'Roboto', arial, sans-serif;
     box-sizing: border-box;
+    overflow-x: hidden; /* Outline is showing title leaks outside of 100vw, need to rectify this later */
 }
 img {
     display: block;
@@ -36,9 +36,36 @@ img {
     background: #fbb730;
 }
 
+body {
+    width: 100vw;
+}
+
+/* Menu styling */
+.nav {
+    margin-top: 5vh;
+    margin-right: 5vw;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2em;
+}
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+.nav a:hover,
+.nav a:focus {
+    color: #fbb730;
+}
+@media (max-width: 400px) {
+    .nav {
+        justify-content: center;
+        gap: 1em;
+    }
+}
+
 /* Header styling */
 .headerContainer {
-    width: 100vw;
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/header.jpg");
     background-position: center top;
@@ -48,45 +75,65 @@ img {
     content: "";
     position: absolute;
     top: calc(100vh - 60px);
-    left: calc(50vw - 195px);
+    left: calc(50vw - 145px);
     border-bottom: 60px solid black;
-    border-left: 200px solid transparent;
-    border-right: 200px solid transparent;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
     z-index: 999;
     text-align: center;
     }
 .headerTitle {
     font-weight: 400;
-    font-size: 8em;
+    font-size: clamp(3rem, 10vw, 12rem);
     color: #fff;
-    padding: 3em 0 0 1em;
     text-transform: uppercase;
+    padding: 35vh 0 0 3rem;
+}
+@media (min-width: 800px) {
+    .headerTitle {
+        padding: 35vh 0 0 10rem;
+    }
 }
 
 /* About styling */
 .aboutContainer {
-    width: 100vw;
+    position: relative;
     height: 100vh;
     color: #fff;
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/abraham-fox.jpg");
-    background-position: center top;
-    background-size: cover;
+    background: #010101;
+    background-image: url("images/abraham-fox.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 70%;
+    padding: 6rem;
 }
 .aboutContainer:after {
     content: "";
     position: absolute;
     top: calc(100vh - 60px);
-    left: calc(50vw - 195px);
+    left: calc(50vw - 145px);
     border-bottom: 60px solid white;
-    border-left: 200px solid transparent;
-    border-right: 200px solid transparent;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
     z-index: 999;
     text-align: center;
     }
 .aboutTitle {
-    transform: rotate(-90deg);
     position: absolute;
-    left: -1em;
     top: 50%;
+    transform: rotate(-90deg);
+    font-weight: 300;
+    letter-spacing: 1px;
 }
+.aboutWording {
+    margin-top: 10%;
+    float: right;
+    width: 50%;
+    font-size: 1.5em;
+}
+.aboutWordingLower {
+    margin-top: 4rem;
+    margin-left: 8rem;
+}
+
+/* Gallery styling */
