@@ -105,7 +105,7 @@ body {
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 70%;
-    padding: 6rem;
+    padding: 2rem;
 }
 .aboutContainer:after {
     content: "";
@@ -119,21 +119,28 @@ body {
     text-align: center;
     }
 .aboutTitle {
-    position: absolute;
-    top: 50%;
-    transform: rotate(-90deg);
+    padding: 1rem 0;
     font-weight: 300;
     letter-spacing: 1px;
 }
 .aboutWording {
-    margin-top: 10%;
-    float: right;
-    width: 50%;
-    font-size: 1.5em;
+    font-size: .8em;
 }
-.aboutWordingLower {
-    margin-top: 4rem;
-    margin-left: 8rem;
+@media (min-width:899px) {
+    .mobileProfilePic {
+        display: none;
+    }
 }
-
-/* Gallery styling */
+@media (max-width:900px) {
+    .mobileProfilePic {
+        max-width: 75vw;
+        margin: 0 auto;
+    }
+    .aboutContainer {
+        background-image: none;
+    }
+    .aboutTitle {
+        text-align: center;
+        font-size: clamp(1rem, 5vw, 3rem);
+    }
+}
